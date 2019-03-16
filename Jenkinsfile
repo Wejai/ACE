@@ -9,10 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         bat 'echo "hellowrold"'
-        dir(path: 'D:\\Program Files\\Docker Toolbox') {
-          bat(script: 'docker images', returnStatus: true, returnStdout: true)
-        }
-
+        bat(script: '"C:\\Program Files\\Git\\bin\\bash.exe" --login -i "d:\\Program Files\\Docker Toolbox\\start.sh"', returnStatus: true)
       }
     }
   }
