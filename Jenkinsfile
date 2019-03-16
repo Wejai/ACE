@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'https://hub.docker.com/r/ibmcom/ace/'
+    }
+
+  }
   stages {
     stage('Initialize') {
       steps {
