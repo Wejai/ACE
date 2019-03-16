@@ -9,7 +9,10 @@ pipeline {
     stage('Build') {
       steps {
         bat 'echo "hellowrold"'
-        bat 'docker pull ibmcom/ace'
+        dir(path: 'D:\\Program Files\\Docker Toolbox') {
+          bat(script: 'docker images', returnStatus: true, returnStdout: true)
+        }
+
       }
     }
   }
