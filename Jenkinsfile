@@ -1,10 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('DEV') {
+    stage('Initialize') {
       steps {
-        echo 'hi'
-        bat(script: 'buildbar', returnStatus: true, returnStdout: true)
+        echo 'Welcome to the demo'
       }
     }
   }
