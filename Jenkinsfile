@@ -1,11 +1,12 @@
 pipeline {
-  agent any
-  stages {
-    stage('DEV') {
-      steps {
-        echo 'hi'
-        bat(script: 'buildbar', returnStatus: true, returnStdout: true)
-      }
+    agent {
+        docker { image 'node:7-alpine' }
     }
-  }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
 }
